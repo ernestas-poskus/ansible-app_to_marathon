@@ -24,3 +24,11 @@
   delay: 1
   retries: '{{ retries }}'
   when: marathon_wait_for_deployment
+
+- name: "Restartnig app: {{marathon_app.id}}"
+  tags:
+    - restart
+  uri: >
+    url="{{ marathon_url }}/v2/apps/{{marathon_app.id}}/restart"
+    method=POST
+    status_code=200
