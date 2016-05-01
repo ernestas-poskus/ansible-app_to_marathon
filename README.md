@@ -42,6 +42,22 @@ Example Playbook
         instances: 1
 ```
 
+> To create application
+```
+ansible-playbook your_application.yml --tags "create"
+```
+
+> To scale application
+```
+ansible-playbook your_application.yml --tags "scale" -e 'scale_to=3'
+```
+
+> To destroy application
+```
+ansible-playbook your_application.yml --tags "destroy" -e 'want_to_destroy=1'
+```
+
+
 License
 -------
 
