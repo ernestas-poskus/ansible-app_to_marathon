@@ -1,6 +1,8 @@
 ---
 # tasks file for ansible-app_to_marathon
 - name: "Launching app: {{ marathon_app.id }}"
+  tags:
+    - create
   uri: >
     url="{{ marathon_url }}/v2/apps/{{marathon_app.id}}"
     method=PUT
@@ -10,6 +12,9 @@
   register: marathon_deployment
 
 - name: "Waiting for app: {{ marathon_app.id }}"
+  tags:
+    - create
+    - wait
   uri: >
     url="{{ marathon_url }}/v2/deployments"
     method=GET
