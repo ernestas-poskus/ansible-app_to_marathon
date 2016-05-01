@@ -32,3 +32,12 @@
     url="{{ marathon_url }}/v2/apps/{{marathon_app.id}}/restart"
     method=POST
     status_code=200
+
+- name: "Destroying app: {{marathon_app.id}}"
+  tags:
+    - destroy
+  uri: >
+    url="{{ marathon_url }}/v2/apps/{{marathon_app.id}}"
+    method=DELETE
+    status_code=200
+  when: want_to_destroy is defined
