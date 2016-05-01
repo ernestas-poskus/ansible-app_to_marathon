@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - role: ansible-app_to_marathon
+      marathon_url: http://localhost:8080
+      marathon_app:
+        id: "basic-0"
+        cmd: "while [ true ] ; do echo 'Hello Marathon' ; sleep 5 ; done"
+        cpus: 0.1
+        mem: 10
+        instances: 1

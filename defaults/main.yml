@@ -1,0 +1,5 @@
+---
+# defaults file for ansible-app_to_marathon
+marathon_wait_for_deployment: true
+marathon_url: http://127.0.0.1:8080
+retries: 3600
