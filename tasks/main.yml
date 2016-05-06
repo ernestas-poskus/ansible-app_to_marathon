@@ -3,6 +3,7 @@
 - name: "Launching app: {{ marathon_app.id }}"
   tags:
     - create
+    - update
   uri: >
     url="{{ marathon_url }}/v2/apps/{{marathon_app.id}}"
     method=PUT
