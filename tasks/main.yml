@@ -33,6 +33,7 @@
     url="{{ marathon_url }}/v2/apps/{{marathon_app.id}}/restart"
     method=POST
     status_code=200
+  when: restart is defined
 
 - name: "Destroying app: {{marathon_app.id}}"
   tags:
