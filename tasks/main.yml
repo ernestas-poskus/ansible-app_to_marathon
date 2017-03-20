@@ -41,7 +41,7 @@
     url="{{ marathon_url }}/v2/apps/{{marathon_app.id}}"
     method=DELETE
     status_code=200
-  when: want_to_destroy is defined
+  when: destroy is defined
 
 - name: "Scale app: {{marathon_app.id}}"
   tags:
